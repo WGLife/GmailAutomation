@@ -2,6 +2,7 @@
 Feature: send emails between accounts
   Scenario: send email from seleniumtest10@gmail.com to seleniumtests30@gmail.com
     Given user goes to Gmail login page
+    And logout from gmail if need
     When user logins with username "seleniumtests10" and password "060788avavav"
     And user clicks Compose button
     And user sends email to "seleniumtests30@gmail.com"

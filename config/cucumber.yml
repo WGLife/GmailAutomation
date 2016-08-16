@@ -1,4 +1,4 @@
 default: --profile html_report
-html_report: --format html --out reports
-login_tests: --tags @login -p html_report
+html_report: --format AllureCucumber::Formatter
+login_tests: --tags @login --format AllureCucumber::Formatter
 send_email_tests: --tags @send_email -p html_report
