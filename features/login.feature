@@ -1,5 +1,12 @@
+@login
 Feature: login to gmail
-  Scenario: login
+  Scenario Outline: login
     Given user goes to Gmail login page
-    When user logins with username "seleniumtests10" and password "060788avavav"
+    And logout from gmail if need
+    When user logins with username "<username>" and password "<password>"
     Then home page of mailbox appears
+
+    Examples:
+    |     username    |   password   |
+    | seleniumtests10 | 060788avavav |
+    | seleniumtests30 | 060788avavav |

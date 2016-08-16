@@ -1,3 +1,4 @@
+@send_email
 Feature: send emails between accounts
   Scenario: send email from seleniumtest10@gmail.com to seleniumtests30@gmail.com
     Given user goes to Gmail login page
@@ -6,6 +7,3 @@ Feature: send emails between accounts
     And user sends email to "seleniumtests30@gmail.com"
     Then success message with text "Your message has been sent." appears
     And user "seleniumtests30" receives email
-
-#  Scenario: send email and check that email came
-#    Then email comes to recipient "seleniumtests30@gmail.com"
