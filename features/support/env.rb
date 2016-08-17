@@ -1,3 +1,4 @@
+require 'selenium-webdriver'
 require 'capybara'
 require 'rspec'
 require 'capybara/dsl'
@@ -11,7 +12,15 @@ require_relative '../step_definitions/pages/gmail/home/home_page'
 require_relative '../step_definitions/pages/gmail/navigation/navigation'
 require_relative '../step_definitions/pages/gmail/inbox/table_record_section'
 require_relative '../step_definitions/pages/gmail/inbox/inbox_page'
+require_relative 'webdriver/config'
 
-Capybara.javascript_driver = :firefox
-Capybara.default_driver = :selenium
-Capybara.default_max_wait_time = 10
+use_grid = ENV['grid']
+browser = ENV['browser']
+
+config = Config.new browser
+if use_grid == 'true'
+  config.remote_driver
+else
+  config.local_driver
+end
+config.setup_driver 'https://mail.google.com', 10
