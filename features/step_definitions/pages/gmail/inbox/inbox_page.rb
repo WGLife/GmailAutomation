@@ -1,5 +1,11 @@
 class InboxPage < SitePrism::Page
-  set_url "https://mail.google.com/mail/#inbox"
+  set_url 'https://mail.google.com/mail/#inbox'
 
-  sections :table_records, TableRecordSection, "table.zt tr"
+  attr_reader :carcass
+
+  def initialize
+    @carcass = Carcass.new
+  end
+
+  sections :table_records, TableRecordSection, 'table.zt tr'
 end
