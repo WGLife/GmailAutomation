@@ -16,10 +16,10 @@ require_relative 'webdriver/config'
 use_grid = ENV['grid']
 browser = ENV['browser']
 
-config = Config.new browser
+Config.browser = browser
 if use_grid == 'true'
-  config.remote_driver
+  Config.remote_driver
 else
-  config.local_driver
+  Config.local_driver
 end
-config.setup_driver 'https://mail.google.com', 10
+Config.setup_driver 'https://mail.google.com', 10
