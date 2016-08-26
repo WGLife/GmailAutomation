@@ -93,7 +93,7 @@ PLATFORMS
 
 DEPENDENCIES
   allure-cucumber
-  capybara
+  capybara (= 2.8.0)
   chromedriver-helper
   cucumber
   rspec

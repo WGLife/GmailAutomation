@@ -11,6 +11,10 @@ class Config
         config.default_max_wait_time = implicit_waiter
       end
       Capybara.current_session.driver.browser.manage.window.maximize
+
+      # SitePrism.configure do |config|
+      #   config.use_implicit_waits = true
+      # end
     end
 
     def local_driver
